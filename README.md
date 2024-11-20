@@ -1,6 +1,4 @@
-Ecco il testo formattato in Markdown, pronto per essere salvato come file `.md`:
 
-```markdown
 # Deliverable Task 1 - Multiple-choice
 
 Questo README descrive il task multiple choice ideato sul dataset di interrogazioni della provincia di Trento.  
@@ -34,45 +32,45 @@ Ogni riga dei file è un sample in formato JSON. Qui di seguito un esempio:
 ```
 
 In particolare il campo `assessorato` è estratto dal campo `risposta`, il quale a sua volta è il testo contenuto nel file `risposta.pdf` del dataset originale.  
-Il campo `assessorato` può avere solo uno dei seguenti valori:
+Il campo `assessorato` può avere solo uno dei valori dei seguenti mini-cluster:
 
-- **Cluster 1**  
+- **Cluster istruzione**  
     - "assessorato all’istruzione, cultura e sport, politiche per la famiglia, per i giovani e le pari opportunità"  
     - "assessorato all’istruzione, università e cultura"
 
-- **Cluster 2**  
+- **Cluster salute**  
     - "assessorato alla salute, politiche sociali, disabilità e famiglia"  
     - "assessorato alla salute, politiche sociali e cooperazione"  
     - "assessorato alla salute, politiche sociali, disabilità e famiglia sociali"
 
-- **Cluster 3**  
+- **Cluster enti e consiglio**  
     - "assessorato agli enti locali e rapporti con il consiglio provinciale"
 
-- **Cluster 4**  
+- **Cluster sviluppo economico**  
     - "assessorato allo sviluppo economico, lavoro, università e ricerca"  
     - "assessorato allo sviluppo economico, lavoro, università, ricerca"  
     - "assessorato allo sviluppo economico, ricerca e lavoro"
 
-- **Cluster 5**  
+- **Cluster artigianato**  
     - "assessorato all’artigianato, commercio, turismo, foreste, caccia e pesca"  
     - "assessorato all’artigianato, commercio, promozione sport e turismo"  
     - "assessorato all’artigianato, commercio, promozione, sport e turismo"
 
-- **Cluster 6**  
+- **Cluster agricoltura**  
     - "assessorato all’agricoltura, foreste, turismo, promozione, caccia e pesca"  
     - "assessorato all’agricoltura, foreste, caccia e pesca"  
     - "assessorato all’agricoltura, promozione dei prodotti trentini, ambiente, difesa idrogeologica e enti locali"
 
-- **Cluster 7**  
+- **Cluster enti locali**  
     - "assessorato agli enti locali, cooperazione internazionale, trasporti e mobilità"
 
-- **Cluster 8**  
+- **Cluster urbanistica**  
     - "assessorato all’urbanistica, energia e trasporti"
 
-- **Cluster 9**  
+- **Cluster politiche per la casa**  
     - "assessorato alle politiche per la casa, patrimonio, demanio e promozione della conoscenza dell’autonomia"
 
-- **Cluster 10**  
+- **Cluster presidente**  
     - "presidente"
 
 Si noti che alcuni assessorati hanno nomi molto simili. Non sono stati normalizzati ulteriormente per semplicità e aderenza con i file originali `.pdf` dove queste varianti esistono. Si creano quindi 10 mini-cluster in cui, ad esempio, l'assessorato alla salute può avere 3 nomi diversi.
@@ -129,5 +127,4 @@ Il prompt che abbiamo usato è:
 
 
 Quale assessorato meglio si addice a rispondere alla questione?
-```
 ```
