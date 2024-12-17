@@ -27,10 +27,13 @@ def compute_metrics(true_values, predicted_values):
     return accuracy, precision, recall, f1_micro, f1_macro
 
 def compute_rouge(reference_risposte, predicted_risposte):
-    """Compute ROUGE-1 scores between true and predicted 'risposta' values."""
+    """Compute average ROUGE-1 scores between true and predicted 'risposta' values."""
     rouge_scorer = load("rouge", keep_in_memory=True)
-    rouge_scores = rouge_scorer.compute(predictions=predicted_risposte, references=reference_risposte)
-    return rouge_scores["rouge1"]
+    rouge_scores = [
+        rouge_scorer.compute(predictions=[predicted], references=[reference])["rouge1"]
+        for predicted, reference in zip(predicted_risposte, reference_risposte)
+    ]
+    return sum(rouge_scores) / len(rouge_scores) if rouge_scores else 0.0
 
 def main(reference_file, answer_file, task):
     # Load data
@@ -50,11 +53,13 @@ def main(reference_file, answer_file, task):
     true_risposte = [reference_data[atto_id].get("risposta", "") for atto_id in common_ids]
     predicted_risposte = [answer_data[atto_id].get("risposta", "") for atto_id in common_ids]
 
+    # Compute metrics based on task
     if task in ["all", "multiple_choice"]:
         if any(true_assessorato) and any(predicted_assessorato):
+            # Compute assessorato metrics
             accuracy, precision, recall, f1_micro, f1_macro = compute_metrics(true_assessorato, predicted_assessorato)
 
-            print("Metrics for the multiple choice task")
+            print("Metrics for 'assessorato' comparison")
             print(f"Comparing {len(predicted_assessorato)} elements:")
             print(f"  Accuracy: {accuracy:.4f}")
 
@@ -66,9 +71,10 @@ def main(reference_file, answer_file, task):
 
     if task in ["all", "generation"]:
         if any(true_risposte) and any(predicted_risposte):
+            # Compute ROUGE-1 score for 'risposta'
             rouge1_score = compute_rouge(true_risposte, predicted_risposte)
-            print("\nMetrics for the generation task")
-            print(f"  ROUGE-1 Score: {rouge1_score:.4f}")
+            print("\nMetrics for 'risposta' comparison")
+            print(f"  Average ROUGE-1 Score: {rouge1_score:.4f}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Compare 'assessorato' and 'risposta' fields in two JSONL files using matching 'numero_atto'.")
