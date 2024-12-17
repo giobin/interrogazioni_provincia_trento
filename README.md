@@ -71,7 +71,6 @@ Il campo `assessorato` può avere solo uno dei valori dei seguenti mini-cluster:
 
 Si noti che alcuni assessorati hanno nomi molto simili. Non sono stati normalizzati ulteriormente per semplicità e aderenza con i file originali `.pdf` dove queste varianti esistono. Si creano quindi 10 mini-cluster in cui, ad esempio, l'assessorato alla salute può avere 3 nomi diversi.
 
----
 ## TASK MULTIPLE CHOICE
 
 Il task consiste nello scegliere il campo `assessorato` tra 10 possibilità, dato in input al modello (e.g. LLM) il campo `domanda`.  
@@ -82,15 +81,15 @@ Tra le 10 possibilità, oltre all'assessorato corretto, ci sono 9 distrattori sc
 ## TASK GENERAZIONE
 
 Il task consiste nel generare una `risposta` dato in input al modello LLM il campo `domanda`.
----
 
+---
 ## SCORER
 
 Lo scorer permette di ottenere le metriche di valutazione per i due task (e.g. Accuracy, Rouge) e si aspetta due file in input:
 
 - `reference_file`: il file con le gold labels, tipicamente il test set stesso. Il file deve essere in formato `.jsonl` e avere la stessa struttura presentata precedentemente.
 - `answer_file`: il file con le scelte del modello e/o la risposta generata. Lo scorer compara il campo `assessorato` di ogni elemento di questo file con il campo `assessorato` del `reference_file` per calcolare le metriche del task multiple choice. Compara invece i campi `risposta` per valutare le metriche del task di generzione.
-- `task`: il task da valutare. Le possibili scelte sono 'generation', 'multiple_choice' and 'all'.
+- `task`: il task da valutare. Le possibili scelte sono `generation`, `multiple_choice` and `all`.
 
 Lo scorer stampa le metriche su standard output.  
 
