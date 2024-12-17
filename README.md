@@ -1,8 +1,4 @@
-
-# Deliverable Task 1 - Multiple-choice
-
-Questo README descrive il task multiple choice ideato sul dataset di interrogazioni della provincia di Trento.  
-Il task consiste nello scegliere l'assessorato a cui fa riferimento un file di domanda, scegliendo tra 10 possibilità, di cui solo una è quella corretta.
+Questo README descrive i task di multiple choice e generazione ideati sul dataset di interrogazioni della provincia di Trento.  
 
 ## Contenuto della cartella "dataset"
 
@@ -76,7 +72,6 @@ Il campo `assessorato` può avere solo uno dei valori dei seguenti mini-cluster:
 Si noti che alcuni assessorati hanno nomi molto simili. Non sono stati normalizzati ulteriormente per semplicità e aderenza con i file originali `.pdf` dove queste varianti esistono. Si creano quindi 10 mini-cluster in cui, ad esempio, l'assessorato alla salute può avere 3 nomi diversi.
 
 ---
-
 ## TASK MULTIPLE CHOICE
 
 Il task consiste nello scegliere il campo `assessorato` tra 10 possibilità, dato in input al modello (e.g. LLM) il campo `domanda`.  
@@ -84,14 +79,18 @@ Il modello deve quindi stimare quale dei 10 assessorati prenderà in gestione la
 
 Tra le 10 possibilità, oltre all'assessorato corretto, ci sono 9 distrattori scelti randomicamente tra quelli elencati sopra, pescando un solo elemento da ognuno dei mini-cluster.
 
+## TASK GENERAZIONE
+
+Il task consiste nel generare una `risposta` dato in input al modello LLM il campo `domanda`.
 ---
 
 ## SCORER
 
-Lo scorer permette di ottenere le metriche di valutazione (e.g. Accuracy) e si aspetta due file in input:
+Lo scorer permette di ottenere le metriche di valutazione per i due task (e.g. Accuracy, Rouge) e si aspetta due file in input:
 
 - `reference_file`: il file con le gold labels, tipicamente il test set stesso. Il file deve essere in formato `.jsonl` e avere la stessa struttura presentata precedentemente.
-- `answer_file`: il file con le scelte del modello. Lo scorer compara il campo `assessorato` di ogni elemento di questo file con il campo `assessorato` del `reference_file`.
+- `answer_file`: il file con le scelte del modello e/o la risposta generata. Lo scorer compara il campo `assessorato` di ogni elemento di questo file con il campo `assessorato` del `reference_file` per calcolare le metriche del task multiple choice. Compara invece i campi `risposta` per valutare le metriche del task di generzione.
+- `task`: il task da valutare. Le possibili scelte sono 'generation', 'multiple_choice' and 'all'.
 
 Lo scorer stampa le metriche su standard output.  
 
@@ -99,15 +98,17 @@ Lo scorer stampa le metriche su standard output.
 Per lanciare lo script esegui:
 
 ```bash
-python scorer.py reference_file.jsonl answer_file.jsonl
+python scorer.py reference_file.jsonl answer_file.jsonl all
 ```
 
 ---
 
 ## BASELINES
 
-Abbiamo calcolato alcune baselines sul task multiple choice usando anche due LLMs con capacità linguistiche per l'italiano:  
+Abbiamo calcolato alcune baselines usando due LLMs con capacità linguistiche per l'italiano:  
 **`google/gemma-2-9b-it`** e **`swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA`**.
+
+sul task multiple choice:
 
 | Modello                                                | Accuracy Zero-shot | Accuracy 1-shot |
 |--------------------------------------------------------|--------------------|-----------------|
@@ -128,3 +129,10 @@ Il prompt che abbiamo usato è:
 
 Quale assessorato meglio si addice a rispondere alla questione?
 ```
+
+task di generazione:
+
+| Modello                                                | Rouge-1 |
+|--------------------------------------------------------|---------|
+| swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA          | 0.33    |
+| google/gemma-2-9b-it                                   | N.A.    |
