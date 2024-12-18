@@ -133,5 +133,5 @@ task di generazione:
 
 | Modello                                                | Rouge-1 |
 |--------------------------------------------------------|---------|
-| swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA          | 0.33    |
-| google/gemma-2-9b-it                                   | N.A.    |
+| swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA          | 0.3273  |
+| google/gemma-2-9b-it                                   | 0.3312  |
