@@ -131,7 +131,7 @@ Quale assessorato meglio si addice a rispondere alla questione?
 
 task di generazione:
 
-| Modello                                                | Rouge-1 |
-|--------------------------------------------------------|---------|
-| swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA          | 0.3273  |
-| google/gemma-2-9b-it                                   | 0.3312  |
+| Modello                                                | Rouge-1 | Rouge-2 |
+|--------------------------------------------------------|---------|---------|
+| swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA          | 0.3273  | 0.0828  |
+| google/gemma-2-9b-it                                   | 0.3312  | 0.0833  |
