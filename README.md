@@ -23,7 +23,7 @@ Ogni riga dei file è un sample in formato JSON. Qui di seguito un esempio:
     "primo_firmatario": "Marini Alex",
     "url_domanda": "https://www.consiglio.provincia.tn.it/doc/IDAP_1672974.pdf",
     "url_risposta": "https://www.consiglio.provincia.tn.it/doc/IDAP_1678241.pdf",
-    "assessorato": "Assessore all'urbanistica, ambiente e cooperazione"
+    "assessorato": "assessorato all'urbanistica, ambiente e cooperazione"
 }
 ```
 
