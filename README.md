@@ -13,17 +13,17 @@ Ogni riga dei file è un sample in formato JSON. Qui di seguito un esempio:
 
 ```json
 {
-    "domanda": "Gruppo consiliare Misto\n\n ... ",
-    "risposta": "**Vicepresidente**\n ...",
-    "anno": 2022,
-    "numero_atto": "1669824",
-    "data_atto": "2022-03-17T00:00:00",
-    "materia": "4.8. Tutela dell'ambiente",
-    "oggetto": "Valutazione di incidenza ambientale sul progetto di riaccensione dei forni del cementificio di Sarche",
-    "primo_firmatario": "Marini Alex",
-    "url_domanda": "https://www.consiglio.provincia.tn.it/doc/IDAP_1672974.pdf",
-    "url_risposta": "https://www.consiglio.provincia.tn.it/doc/IDAP_1678241.pdf",
-    "assessorato": "assessorato all'urbanistica, ambiente e cooperazione"
+    "domanda": "domanda": "CONSIGLIO DELLA PROVINCIA AUTONOMA DI TRENTO\n\n ...",
+    "risposta": "**Assessore all’artigianato, commercio, promozione**\n**sport e turismo**\nVia Romagnosi, 9 – 38122 TRENTO\n**T +39 0461 495929 F +39 0461 499264** ...,"
+    "anno": 2021,
+    "numero_atto": "1597332",
+    "data_atto": "2021-04-21T00:00:00",
+    "materia": "4.4. Opere pubbliche",
+    "oggetto": "Tempi di presentazione dello studio di sostenibilitÃ  e di realizzazione dell'Ice rink di PinÃ¨ ...",
+    "primo_firmatario": "Dallapiccola Michele",
+    "url_domanda": "https://www.consiglio.provincia.tn.it/doc/IDAP_1597351.pdf",
+    "url_risposta": "https://www.consiglio.provincia.tn.it/doc/IDAP_1605290.pdf",
+    "assessorato": "assessorato all’artigianato, commercio, promozione sport e turismo"
 }
 ```
 
