@@ -13,7 +13,7 @@ Ogni riga dei file è un sample in formato JSON. Qui di seguito un esempio:
 
 ```json
 {
-    "domanda": "domanda": "CONSIGLIO DELLA PROVINCIA AUTONOMA DI TRENTO\n\n ...",
+    "domanda": "CONSIGLIO DELLA PROVINCIA AUTONOMA DI TRENTO\n\n ...",
     "risposta": "**Assessore all’artigianato, commercio, promozione**\n**sport e turismo**\nVia Romagnosi, 9 – 38122 TRENTO\n**T +39 0461 495929 F +39 0461 499264** ...,"
     "anno": 2021,
     "numero_atto": "1597332",
