@@ -120,7 +120,7 @@ sul task multiple choice:
 - La baseline **random** ha il 10% di accuracy, scegliendo randomicamente tra 10 possibilità.  
 
 Per i modelli LLMs abbiamo usato la libreria **[lm-eval](https://github.com/EleutherAI/lm-evaluation-harness)** per ottenere l'accuracy in setting di 0 e 1-shot.  
-Il prompt che abbiamo usato è:  
+Il prompt che abbiamo usato per il task multiple choice è:  
 
 ```plaintext
 {{domanda}}
@@ -129,7 +129,11 @@ Il prompt che abbiamo usato è:
 Quale assessorato meglio si addice a rispondere alla questione?
 ```
 
-task di generazione:
+Per il task di generazione il prompt cha abbiamo usato è:
+
+```plaintext
+Rispondi in maniera esaustiva alla seguente interrogazione rivolta al Consiglio della Provincia Autonoma di Trento da un consigliere: '{{domanda}}'\nRisposta:
+```
 
 | Modello                                                | Rouge-1 | Rouge-2 |
 |--------------------------------------------------------|---------|---------|
