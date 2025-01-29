@@ -93,7 +93,7 @@ Nel caso del test set "test_ XVII_legislatura.jsonl" le possibili scelte sono gl
 Nel caso dei set "valid/test_set_interrogazioni_trento.jsonl" ci sono 10 possibilità. Oltre all'assessorato corretto, ci sono 9 distrattori scelti randomicamente tra quelli elencati nei mini-cluster, pescando al più un solo elemento da ognuno dei mini-cluster.
 
 Valutazione:
-Lo scorer `scorer.py` permette di ottenere le metriche di valutazione e si aspetta due file in input:
+Lo scorer `scorer.py` permette di ottenere le metriche di valutazione e si aspetta due file in input e la tipologia del task da valutare:
 - `reference_file`: il file con le gold labels, tipicamente il test set stesso. Il file deve essere in formato `.jsonl` e avere la stessa struttura presentata precedentemente.
 - `answer_file`: il file con le scelte del modello. Lo scorer compara il campo `assessorato` di ogni elemento di questo file con il campo `assessorato` del `reference_file` per calcolare le metriche del task multiple choice (Accuracy, ...). 
 - `task`: `multiple_choice`.
@@ -103,7 +103,7 @@ Lo scorer `scorer.py` permette di ottenere le metriche di valutazione e si aspet
 Il task consiste nel generare una `risposta` dato in input al modello LLM il campo `domanda`.
 
 Valutazione:
-Lo scorer `scorer.py` permette di ottenere le metriche di valutazione e si aspetta due file in input:
+Lo scorer `scorer.py` permette di ottenere le metriche di valutazione e si aspetta due file in input e la tipologia del task da valutare:
 - `reference_file`: il file con le gold labels, tipicamente il test set stesso. Il file deve essere in formato `.jsonl` e avere la stessa struttura presentata precedentemente.
 - `answer_file`: il file con gli output generati dal modello. Lo scorer compara il campo `risposta` di ogni elemento di questo file con il campo `risposta` del `reference_file` per calcolare le metriche del task genrativo (BLEU, BLEU-Score, ...). 
 - `task`: `generation`.
