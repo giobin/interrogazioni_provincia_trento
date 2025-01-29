@@ -106,7 +106,7 @@ Valutazione:
 Lo scorer `scorer.py` permette di ottenere le metriche di valutazione e si aspetta due file in input:
 - `reference_file`: il file con le gold labels, tipicamente il test set stesso. Il file deve essere in formato `.jsonl` e avere la stessa struttura presentata precedentemente.
 - `answer_file`: il file con gli output generati dal modello. Lo scorer compara il campo `risposta` di ogni elemento di questo file con il campo `risposta` del `reference_file` per calcolare le metriche del task genrativo (BLEU, BLEU-Score, ...). 
-- `task`: `multiple_choice`.
+- `task`: `generation`.
 
 ---
 ## SCORER
