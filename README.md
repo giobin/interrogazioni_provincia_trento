@@ -128,7 +128,7 @@ python scorer.py reference_file.jsonl answer_file.jsonl all
 Abbiamo calcolato alcune baselines usando due LLMs con capacità linguistiche per l'italiano:  
 **`google/gemma-2-9b-it`** e **`swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA`**.
 
-sul task multiple choice:
+### task multiple choice:
 
 | Modello                                                | Accuracy Zero-shot | Accuracy 1-shot |
 |--------------------------------------------------------|--------------------|-----------------|
@@ -149,6 +149,8 @@ Il prompt che abbiamo usato per il task multiple choice è:
 
 Quale assessorato meglio si addice a rispondere alla questione?
 ```
+
+### task generazione:
 
 Per il task di generazione il prompt cha abbiamo usato è:
 
