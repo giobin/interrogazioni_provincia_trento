@@ -111,7 +111,8 @@ Lo scorer `scorer.py` permette di ottenere le metriche di valutazione e si aspet
 ---
 ## SCORER
 
-Lo scorer stampa le metriche su standard output.  
+Lo scorer stampa le metriche su standard output.
+Se utilizzato con `task`: `all` valuta sia il task di generazione che quello multiple choice.
 
 `scorer.py` è stato testato con Python 3.12 e richiede la libreria **scikit-learn**.  
 Per lanciare lo script esegui:
