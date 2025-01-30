@@ -114,7 +114,8 @@ Lo scorer `scorer.py` permette di ottenere le metriche di valutazione e si aspet
 Lo scorer stampa le metriche su standard output.
 Se utilizzato con `task`: `all` valuta sia il task di generazione che quello multiple choice.
 
-`scorer.py` è stato testato con Python 3.12 e richiede la libreria **scikit-learn**.  
+`scorer.py` è stato testato con Python 3.12 e richiede di installare tra le altre librerie, Fairseq2. Per instalarla si possono seguire le istruzioni qui: https://github.com/facebookresearch/SONAR. Le istruzioni non sono molto chiare, ma per istallare la versione 0.3.0rc1 (pytorch 2.5.1, CUDA 12.4) basta lanciare: 
+`pip install fairseq2==v0.3.0rc1 --pre --extra-index-url https://fair.pkg.atmeta.com/fairseq2/whl/rc/pt2.5.1/cu124`
 Per lanciare lo script esegui:
 
 ```bash
