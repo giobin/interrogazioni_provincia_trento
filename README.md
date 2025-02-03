@@ -159,7 +159,16 @@ Per il task di generazione il prompt cha abbiamo usato è:
 Rispondi in maniera esaustiva alla seguente interrogazione rivolta al Consiglio della Provincia Autonoma di Trento da un consigliere: '{{domanda}}'\nRisposta:
 ```
 
-| Modello                                                | Rouge-1 | Rouge-2 |
-|--------------------------------------------------------|---------|---------|
-| swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA          | 0.3273  | 0.0828  |
-| google/gemma-2-9b-it                                   | 0.3312  | 0.0833  |
+## LLaMAntino-3-ANITA-8B-Inst-DPO-ITA
+
+| Setting            | BERTScore F1 | BLASERScore | ROUGE-1 | ROUGE-2 |
+|--------------------|-------------|-------------|---------|---------|
+| Zero-shot (batch size 4) | 63.80 | 2.5795 | 0.2171 | 0.0634 |
+| Few-shot 1 (batch size 2) | 69.44 | 2.7706 | 0.2146 | 0.1132 |
+
+## gemma-2-9b-it
+
+| Setting            | BERTScore F1 | BLASERScore | ROUGE-1 | ROUGE-2 |
+|--------------------|-------------|-------------|---------|---------|
+| Zero-shot (batch size 2) | 64.24 | 2.6142 | 0.2272 | 0.0620 |
+| Few-shot 1 (batch size 1) | 69.99 | 2.7694 | 0.2166 | 0.1137 |
