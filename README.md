@@ -133,15 +133,21 @@ Abbiamo calcolato alcune baselines usando due LLMs con capacità linguistiche pe
 
 | Modello                                                | Accuracy Zero-shot | Accuracy 1-shot |
 |--------------------------------------------------------|--------------------|-----------------|
-| swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA          | 0.653              | 0.872           |
-| google/gemma-2-9b-it                                   | 0.592              | 0.733           |
-| most frequent                                          | 0.425              |                 |
+| swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA          | 0.426              | N.A.            |
+| google/gemma-2-9b-it                                   | 0.330              | N.A.            |
+| most frequent                                          | 0.230              |                 |
 | random                                                 | 0.100              |                 |
 
 - La baseline **"most frequent"** dà come risposta l'assessorato più frequente tra gli elementi del test set.  
-- La baseline **random** ha il 10% di accuracy, scegliendo randomicamente tra 10 possibilità.  
+- La baseline **random** ha il 12.5% di accuracy, scegliendo randomicamente tra 8 possibilità.  
 
-Per i modelli LLMs abbiamo usato la libreria **[lm-eval](https://github.com/EleutherAI/lm-evaluation-harness)** per ottenere l'accuracy in setting di 0 e 1-shot.  
+Per i modelli LLMs abbiamo usato la libreria **[lm-eval](https://github.com/EleutherAI/lm-evaluation-harness)** per ottenere l'accuracy in setting di 0 e 1-shot. 
+un esempio di comando lm-eval: 
+```plaintext
+accelerate launch -m lm_eval --model hf --model_args pretrained=swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA --tasks interrogazioni_PA --batch_size 1 --trust_remote_code --log_samples --output_path /mnt/llmdata
+/home/gbonetta/progetti/interrogazioni_consiglio_trento_assessorati/results_baselines --num_fewshot 0
+```
+
 Il prompt che abbiamo usato per il task multiple choice è:  
 
 ```plaintext
