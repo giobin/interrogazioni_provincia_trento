@@ -30,14 +30,14 @@ Il file "test_ XVII_legislatura.jsonl" contiene solo interrogazioni dal 30 Novem
 
 Ruoli legislatura XVII:
 ```bash
-presidente  
-assessorato all’istruzione, cultura e sport, politiche per la famiglia, per i giovani e le pari opportunità  
-assessorato all’artigianato, commercio, turismo, foreste, caccia e pesca  
-assessorato all’urbanistica, energia e trasporti  
-assessorato alle politiche per la casa, patrimonio, demanio e promozione della conoscenza dell’autonomia  
-assessorato allo sviluppo economico, lavoro, università e ricerca  
-assessorato alla salute, politiche sociali e cooperazione  
-assessorato all’agricoltura, promozione dei prodotti trentini, ambiente, difesa idrogeologica e enti locali
+assessorato all’agricoltura promozione dei prodotti trentini ambiente difesa idrogeologica e enti locali
+presidente
+assessorato all’artigianato commercio turismo foreste caccia e pesca
+assessorato all’istruzione cultura e sport politiche per la famiglia per i giovani e le pari opportunità
+assessorato alla salute politiche sociali e cooperazione
+assessorato alle politiche per la casa patrimonio demanio e promozione della conoscenza dell’autonomia
+assessorato all’urbanistica energia e trasporti
+assessorato allo sviluppo economico lavoro università e ricerca
 ```
 
 ## Dataset interrogazioni trento
