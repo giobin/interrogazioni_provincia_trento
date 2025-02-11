@@ -26,7 +26,7 @@ Ogni riga dei file è un sample in formato JSON. Qui di seguito un esempio:
 ```
 
 ## Test set XVII legislatura
-Il file test_ XVII_legislatura.jsonl contiene solo interrogazioni dal 30 Novembre 2023 in poi (i.e. XVII legislatura). Il campo `assessorato` viene estratto dal campo `risposta` e può contenere solo un elemento preso dalla seguente lista che si riferisce ai ruoli della legislatura XVII:
+Il file "test_ XVII_legislatura.jsonl" contiene solo interrogazioni dal 30 Novembre 2023 in poi (i.e. XVII legislatura). Il campo `assessorato` viene estratto dal campo `risposta` e può contenere solo un elemento preso dalla seguente lista che si riferisce ai ruoli della legislatura XVII:
 
 Ruoli legislatura XVII:
 ```bash
