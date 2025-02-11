@@ -145,7 +145,7 @@ Per i modelli LLMs abbiamo usato la libreria **[lm-eval](https://github.com/Eleu
 un esempio di comando lm-eval: 
 ```plaintext
 accelerate launch -m lm_eval --model hf --model_args pretrained=swap-uniba/LLaMAntino-3-ANITA-8B-Inst-DPO-ITA --tasks interrogazioni_PA --batch_size 1 --trust_remote_code --log_samples --output_path /mnt/llmdata
-/home/gbonetta/progetti/interrogazioni_consiglio_trento_assessorati/results_baselines --num_fewshot 0
+./results_baselines --num_fewshot 0
 ```
 
 Il prompt che abbiamo usato per il task multiple choice è:  
